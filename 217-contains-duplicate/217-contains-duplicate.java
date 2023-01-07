@@ -1,9 +1,16 @@
-class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-        hasSet = set()
-        for i in nums:
-            if i in hasSet:
-                return True
-            else:
-                hasSet.add(i)
-            
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> hst= new HashSet<Integer>();
+        
+        if(nums == null || nums.length == 0){
+            return false;
+        }
+        for (int i: nums)
+        {
+            if(!hst.add(i)){
+                return true;
+            }
+        }
+        return false;
+    }
+}
